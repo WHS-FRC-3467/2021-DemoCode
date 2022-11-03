@@ -14,6 +14,7 @@ package frc.robot;
  */
 public final class Constants {
     public static final class CanConstants{
+        //IDs for devices in the can bus
         // drivebase
         public static final int left_drivebase_1 = 3;
         public static final int left_drivebase_2 = 4;
@@ -29,7 +30,7 @@ public final class Constants {
         //Shooter
         public static final int shooterMotor1 = 11;
         public static final int shooterMotor2 = 12;
-
+    
         public static final int shooterGateMotor = 10;
 
         public static final int climberMotor = 20;

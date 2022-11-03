@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 public class XBoxControllerDPad extends Trigger
 {
 
-    private final XBoxControllerEE m_controller;
+    private final XBoxControllerEE m_driverController;
     private final int m_DPadValue;
 
     /**
@@ -26,7 +26,7 @@ public class XBoxControllerDPad extends Trigger
      */
     public XBoxControllerDPad(XBoxControllerEE ctrlr, XBoxControllerEE.DPad dpadArm)
     {
-        m_controller = ctrlr;
+        m_driverController = ctrlr;
         m_DPadValue = dpadArm.value;
     }
 
@@ -37,7 +37,7 @@ public class XBoxControllerDPad extends Trigger
      */
     public boolean get()
     {
-        return (m_controller.getPOV(0) == m_DPadValue);
+        return (m_driverController.getPOV(0) == m_DPadValue);
     }
 
 	
