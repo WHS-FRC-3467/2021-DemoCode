@@ -14,18 +14,19 @@ import frc.robot.Constants.CanConstants;
 public class BallProcessorSubsystem extends SubsystemBase {
   /** Creates a new BallProcessorSubsystem. */
 
-  private final TalonSRX m_Vhopper1 = new TalonSRX(CanConstants.vHopperMotor);
-  private final TalonSRX m_Vhopper2 = new TalonSRX(CanConstants.vHopperMotor2);
-  private final TalonSRX m_Gatemotor = new TalonSRX(CanConstants.shooterGateMotor);
+  private final TalonSRX m_vHopper1 = new TalonSRX(CanConstants.vHopperMotor);
+  private final TalonSRX m_vHopper2 = new TalonSRX(CanConstants.vHopperMotor2);
+  private final TalonSRX m_gateMotor = new TalonSRX(CanConstants.shooterGateMotor);
   private final TalonFX m_towerMotor = new TalonFX(CanConstants.ballTowerMotor);
+
   public BallProcessorSubsystem() {
-    m_Vhopper1.configFactoryDefault();
-    m_Vhopper2.configFactoryDefault();
-    m_Gatemotor.configFactoryDefault();
+    m_vHopper1.configFactoryDefault();
+    m_vHopper2.configFactoryDefault();
+    m_gateMotor.configFactoryDefault();
     m_towerMotor.configFactoryDefault();
 
-    m_Vhopper2.setInverted(true);
-    m_Gatemotor.setInverted(true);
+    m_vHopper2.setInverted(true);
+    m_gateMotor.setInverted(true);
   }
 
   @Override
@@ -33,13 +34,13 @@ public class BallProcessorSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 public void driveVhopper(double speed){
-  m_Vhopper1.set(ControlMode.PercentOutput, speed * 0.8);
-  m_Vhopper2.set(ControlMode.PercentOutput, speed * 0.3);
+  m_vHopper1.set(ControlMode.PercentOutput, speed * 0.8);
+  m_vHopper2.set(ControlMode.PercentOutput, speed * 0.3);
 
   }
 
 public void drivegatemotor(double speed){
-  m_Gatemotor.set(ControlMode.PercentOutput, speed);
+  m_gateMotor.set(ControlMode.PercentOutput, speed);
 }
 public void driveballTowerMotor(double speed){
   m_towerMotor.set(ControlMode.PercentOutput, speed);
