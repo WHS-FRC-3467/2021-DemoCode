@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 public class XBoxControllerTrigger extends Trigger
 {
 
-    private final XBoxControllerEE m_controller;
+    private final XBoxControllerEE m_driverController;
     private final int m_axis;
 
     /**
@@ -27,7 +27,7 @@ public class XBoxControllerTrigger extends Trigger
      */
     public XBoxControllerTrigger(XBoxControllerEE ctrlr, XboxController.Axis trigger)
     {
-        m_controller = ctrlr;
+        m_driverController = ctrlr;
         m_axis = trigger.value;
     }
 
@@ -38,7 +38,7 @@ public class XBoxControllerTrigger extends Trigger
      */
     public boolean get()
     {
-        return (m_controller.getRawAxis(m_axis) > 0.2);
+        return (m_driverController.getRawAxis(m_axis) > 0.2);
     }
 
 	
