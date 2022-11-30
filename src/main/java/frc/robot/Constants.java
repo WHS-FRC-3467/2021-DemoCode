@@ -33,6 +33,19 @@ public final class Constants {
         public static final int shooterGateMotor = 10;
 
         public static final int climberMotor = 20;
+    }
+
+    public static final class PneumaticConstants {
+        //Intake Pistons
+        public static final int kIntakePistonRetract = 2;
+        public static final int kIntakePistonDeploy = 3;   
+
+        //Pneumatic Constants
+        public static final int kHoodRetract = 4;
+            //Retracted means that the shooter hood touches the shooter path
+        public static final int kHoodDeploy = 5;
+            //Deployed means that the shooter hood is away from the shooter path
 
     }
+
 }

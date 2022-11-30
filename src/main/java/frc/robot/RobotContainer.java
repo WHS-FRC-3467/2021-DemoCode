@@ -12,6 +12,7 @@ import frc.robot.BallProcessor.DriveBallProcessor;
 import frc.robot.Control.XBoxControllerButton;
 import frc.robot.Control.XBoxControllerEE;
 import frc.robot.Drive.ArcadeDrive;
+import frc.robot.Drive.BasicDriveDistance;
 import frc.robot.Drive.DriveSubsystem;
 import frc.robot.Intake.DriveIntake;
 import frc.robot.Intake.IntakeSubsystem;
@@ -35,6 +36,7 @@ public class RobotContainer {
   private final XBoxControllerEE m_controller = new XBoxControllerEE(0);
   private final XBoxControllerEE m_controller2 = new XBoxControllerEE(1);
 
+  private final BasicDriveDistance m_autoCommand = new BasicDriveDistance(m_drive, 90000);
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
 
@@ -69,6 +71,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return null;
+    return m_autoCommand;
   }
 }
